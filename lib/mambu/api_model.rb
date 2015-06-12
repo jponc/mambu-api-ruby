@@ -9,7 +9,6 @@ module Mambu
     end
 
     def self.find(id, client)
-      puts "#{endpoint(client)}/#{id}"
       response = client.connection.get("#{endpoint(client)}/#{id}")
       data = JSON.parse(response.body)
       new(data)
