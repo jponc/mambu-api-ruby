@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Mambu::Client do
+describe Mambu::ApiClient do
   let(:username) { 'username' }
   let(:password) { 'password' }
   let(:tenant) { 'tenant.sandbox' }

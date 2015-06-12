@@ -1,7 +1,7 @@
 module Mambu
   class InsufficientCredentialsError < StandardError; end
 
-  class Client
+  class ApiClient
     def initialize(username, password, tenant)
       @username = username
       @password = password
