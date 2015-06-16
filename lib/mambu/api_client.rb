@@ -9,6 +9,18 @@ module Mambu
       fail InsufficientCredentialsError unless valid?
     end
 
+    def get(url, options = {})
+      request(:get, url, options)
+    end
+
+    def post(url, options = {})
+      request(:post, url, options)
+    end
+
+    def request(method, url, options)
+      Mambu::Response.new(connection.send(method, url, options))
+    end
+
     def connection
       conn = Faraday.new
       conn.basic_auth(@username, @password)
