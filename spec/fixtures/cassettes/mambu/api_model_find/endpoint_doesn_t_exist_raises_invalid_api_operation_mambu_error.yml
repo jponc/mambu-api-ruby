@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://user:password@tenant.sandbox.mambu.com/api/loanproducts/non-existing-product
+    uri: https://user:password@tenant.sandbox.mambu.com/api/non-existing-endpoint/product_id
     body:
       encoding: US-ASCII
       string: ''
@@ -15,28 +15,28 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 500
+      message: Internal Server Error
     headers:
       Cache-Control:
       - no-cache="set-cookie"
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Mon, 15 Jun 2015 11:10:01 GMT
+      - Tue, 16 Jun 2015 16:21:13 GMT
       Server:
       - Apache
       Set-Cookie:
-      - AWSELB=AFC3ED5314CDA5B5F21A734BA2D87E7FA6204FE51B15A2115800A9DB0BD16AC634A7F2A95065D329B8D9DCEA4A80CA5E30B6E05EFAA593C47E8544DF816DD86F875D461E99;PATH=/
+      - AWSELB=5B7F8DC11C8861D62D37ABA072C3D077ABCB18B4DCCCAD5ABCDE6882E25D6E248496513465330E14B595367759FDC86B8ED8458AB38B0557540963218C903866D20E60D539;PATH=/
       Vary:
       - Accept-Encoding
       Content-Length:
-      - '73'
+      - '74'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '{"returnCode":505,"returnStatus":"INVALID_PRODUCT_ID"}'
+      string: '{"returnCode":3,"returnStatus":"INVALID_API_OPERATION"}'
     http_version:
-  recorded_at: Mon, 15 Jun 2015 11:10:01 GMT
+  recorded_at: Tue, 16 Jun 2015 16:21:13 GMT
 recorded_with: VCR 2.9.3

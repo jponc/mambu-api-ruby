@@ -26,9 +26,9 @@ describe Mambu::ApiModel do
     context "endpoint doesn't exist" do
       before { allow(described_class).to receive(:api_uri).and_return('non-existing-endpoint') }
 
-      it "raises EndpointNotFoundError", :vcr do
+      it "raises invalid api operation mambu error", :vcr do
         expect { described_class.find_all(client) }
-          .to raise_error Mambu::EndpointNotFoundError
+          .to raise_error Mambu::Error, "Invalid api operation"
       end
     end
   end
@@ -44,9 +44,9 @@ describe Mambu::ApiModel do
       end
 
       context "resource doesn't exist" do
-        it "raises ModelNotFoundError", :vcr do
+        it "raises invalid product id mambu error", :vcr do
           expect { described_class.find('non-existing-product', client) }
-            .to raise_error Mambu::ModelNotFoundError
+            .to raise_error Mambu::Error, "Invalid product id"
         end
       end
     end
@@ -54,9 +54,9 @@ describe Mambu::ApiModel do
     context "endpoint doesn't exist" do
       before { allow(described_class).to receive(:api_uri).and_return('non-existing-endpoint') }
 
-      it "raises EndpointNotFoundError", :vcr do
+      it "raises invalid api operation mambu error", :vcr do
         expect { described_class.find('product_id', client) }
-          .to raise_error Mambu::EndpointNotFoundError
+          .to raise_error Mambu::Error, "Invalid api operation"
       end
     end
   end
