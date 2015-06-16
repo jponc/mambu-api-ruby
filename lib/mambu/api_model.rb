@@ -5,25 +5,22 @@ module Mambu
   class ApiModel
     def initialize(data)
       data.each do |key, value|
-        method_name = key.to_s.underscore
+        method_name = key
         self.class.send(:attr_accessor, method_name) unless self.class.method_defined?(method_name)
-        send("#{key.underscore}=", value)
+        send("#{key}=", value)
       end
     end
 
     def self.find(id, client)
-      response = client.connection.get("#{endpoint(client)}/#{id}")
-      fail ModelNotFoundError, response if response.status == 404
-      fail EndpointNotFoundError, response if response.status == 500
-      data = JSON.parse(response.body)
-      new(data)
+      response = client.get("#{endpoint(client)}/#{id}")
+      fail response.error unless response.success?
+      new(response.body)
     end
 
     def self.find_all(client)
-      response = client.connection.get(endpoint(client))
-      fail EndpointNotFoundError, response if response.status == 500
-      data_array = JSON.parse(response.body)
-      data_array.map { |data| new(data) }
+      response = client.get(endpoint(client))
+      fail response.error unless response.success?
+      response.body.map { |data| new(data) }
     end
 
     def self.endpoint(client)
