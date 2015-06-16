@@ -1,12 +1,10 @@
 module Mambu
-  class InsufficientCredentialsError < StandardError; end
-
   class ApiClient
     def initialize(username, password, tenant)
       @username = username
       @password = password
       @tenant = tenant
-      fail InsufficientCredentialsError unless valid?
+      fail Mambu::Error, 'Insufficient credentials' unless valid?
     end
 
     def get(url, options = {})

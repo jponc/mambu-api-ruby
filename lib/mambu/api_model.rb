@@ -1,7 +1,4 @@
 module Mambu
-  class ModelNotFoundError < StandardError; end
-  class EndpointNotFoundError < StandardError; end
-
   class ApiModel
     def initialize(data)
       data.each do |key, value|

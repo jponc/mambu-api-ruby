@@ -20,8 +20,8 @@ describe Mambu::ApiClient do
     context 'has invalid params' do
       let(:username) { '' }
 
-      it 'raises InsufficientCredentialsError' do
-        expect { client }.to raise_error Mambu::InsufficientCredentialsError
+      it 'raises insufficient credentials mambu error' do
+        expect { client }.to raise_error Mambu::Error, 'Insufficient credentials'
       end
     end
   end
