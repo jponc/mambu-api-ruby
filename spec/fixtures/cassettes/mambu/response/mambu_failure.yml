@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://user:password@tenant.sandbox.mambu.com/api/fake-endpoint/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Cache-Control:
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 17 Jun 2015 16:13:18 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - AWSELB=AFC3ED5314CDA5B5F21A734BA2D87E7FA6204FE51B7464502B0BBF8B5E5366BE3F9842D6BB65D329B8D9DCEA4A80CA5E30B6E05EFAA593C47E8544DF816DD86F875D461E99;PATH=/
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '74'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"returnCode":3,"returnStatus":"INVALID_API_OPERATION"}'
+    http_version: 
+  recorded_at: Wed, 17 Jun 2015 16:13:17 GMT
+recorded_with: VCR 2.9.3

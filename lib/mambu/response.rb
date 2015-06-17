@@ -24,6 +24,7 @@ module Mambu
     end
 
     def error
+      return nil if success?
       Mambu::Error.new(error_message, error_code, error_status)
     end
 
