@@ -23,5 +23,9 @@ module Mambu
     def self.endpoint(client)
       "#{client.api_url}/#{api_uri}"
     end
+
+    def self.api_uri
+      name.demodulize.downcase.pluralize
+    end
   end
 end
