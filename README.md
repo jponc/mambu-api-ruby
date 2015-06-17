@@ -47,11 +47,11 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 #### Mambu::ApiModel
 Adding new api models is extremely easy. Model fields (accessors) are set dynamically based on json content. To add User model you have to:
 
-  # create user class (lib/mambu/user.rb) that inherits from Mambu::ApiModel
+    # create user class (lib/mambu/user.rb) that inherits from Mambu::ApiModel
 
-  module Mambu
-    class User < ApiModel
-    end
+    module Mambu
+      class User < ApiModel
+      end
     end
 
     # require this class in lib/mambu.rb
@@ -59,25 +59,25 @@ Adding new api models is extremely easy. Model fields (accessors) are set dynami
 
 Api endpoint is created from connection and model class name. For Mambu::User is is users. You can override this by setting class method api_uri
 
-  module Mambu
-    class User < ApiModel
-      def self.api_uri
-      'endpoint'
+    module Mambu
+      class User < ApiModel
+        def self.api_uri
+        'endpoint'
+      end
+      end
     end
-    end
-  end
 
 You can also override accessor if you want to change how json data is converted into api model. For example:
 
-  module Mambu
-    class LoanProduct < ApiModel
-      attr_accessor :loan_fees
+    module Mambu
+      class LoanProduct < ApiModel
+        attr_accessor :loan_fees
 
-      def loan_fees=(data)
-        @loan_fees = data.map { |hash_fee| Mambu::LoanFee.new(hash_fee) }
+        def loan_fees=(data)
+          @loan_fees = data.map { |hash_fee| Mambu::LoanFee.new(hash_fee) }
+        end
       end
     end
-  end
 
 #### Mambu::Response
 Every response is wrapped in Mambu::Response. This class converts json body to ruby hash with symbolized, snake_cased keys. It also reads mambu #error_code and #error_status from failed response body.
