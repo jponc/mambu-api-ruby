@@ -1,10 +1,9 @@
 module Mambu
   class ApiModel
     def initialize(data)
-      data.each do |key, value|
-        method_name = key
+      data.each do |method_name, value|
         self.class.send(:attr_accessor, method_name) unless self.class.method_defined?(method_name)
-        send("#{key}=", value)
+        send("#{method_name}=", value)
       end
     end
 
