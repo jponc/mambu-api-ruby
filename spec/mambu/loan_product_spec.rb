@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Mambu::LoanProduct do
-  let(:client) { Mambu::ApiClient.new('user', 'password', 'tenant.sandbox') }
-  subject { described_class.find('product_id', client) }
+  let(:connection) { Mambu::Connection.new('user', 'password', 'tenant.sandbox') }
+  subject { described_class.find('product_id', connection) }
 
   describe "#loan_fees=" do
     it "sets array of loan fees", :vcr do

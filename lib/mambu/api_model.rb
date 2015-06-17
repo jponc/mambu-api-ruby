@@ -7,20 +7,20 @@ module Mambu
       end
     end
 
-    def self.find(id, client)
-      response = client.get("#{endpoint(client)}/#{id}")
+    def self.find(id, connection)
+      response = connection.get("#{endpoint(connection)}/#{id}")
       fail response.error unless response.success?
       new(response.body)
     end
 
-    def self.find_all(client)
-      response = client.get(endpoint(client))
+    def self.find_all(connection)
+      response = connection.get(endpoint(connection))
       fail response.error unless response.success?
       response.body.map { |data| new(data) }
     end
 
-    def self.endpoint(client)
-      "#{client.api_url}/#{api_uri}"
+    def self.endpoint(connection)
+      "#{connection.api_url}/#{api_uri}"
     end
 
     def self.api_uri

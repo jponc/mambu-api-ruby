@@ -1,5 +1,5 @@
 module Mambu
-  class ApiClient
+  class Connection
     def initialize(username, password, tenant)
       @username = username
       @password = password
