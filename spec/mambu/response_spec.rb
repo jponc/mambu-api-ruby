@@ -134,4 +134,70 @@ describe Mambu::Response do
       end
     end
   end
+
+  context "server error" do
+    let(:faraday_response) do
+      connection.connection.get("#{connection.api_url}/loanproducts/product_id/schedule")
+    end
+
+    it "creates response" do
+      VCR.use_cassette("mambu/response/mambu_error") do
+        expect(subject).to be_kind_of described_class
+      end
+    end
+
+    it "sets error code" do
+      VCR.use_cassette("mambu/response/mambu_error") do
+        expect(subject.error_code).to eq -1
+      end
+    end
+
+    it "sets error status" do
+      VCR.use_cassette("mambu/response/mambu_error") do
+        expect(subject.error_status).to eq 'INTERNAL_SERVER_ERROR'
+      end
+    end
+
+    describe "#error_message" do
+      it "creates humanized error message from error status" do
+        VCR.use_cassette("mambu/response/mambu_error") do
+          expect(subject.error_message).to eq 'Internal server error'
+        end
+      end
+    end
+
+    describe "#success?" do
+      it "is not success" do
+        VCR.use_cassette("mambu/response/mambu_error") do
+          expect(subject.success?).to eq false
+        end
+      end
+    end
+
+    describe "#error" do
+      it "returns mambu error" do
+        VCR.use_cassette("mambu/response/mambu_error") do
+          expect(subject.error).to be_kind_of Mambu::Error
+        end
+      end
+
+      it "sets errors code" do
+        VCR.use_cassette("mambu/response/mambu_error") do
+          expect(subject.error.code).to eq -1
+        end
+      end
+
+      it "has errors status" do
+        VCR.use_cassette("mambu/response/mambu_error") do
+          expect(subject.error.status).to eq 'INTERNAL_SERVER_ERROR'
+        end
+      end
+
+      it "has errors message" do
+        VCR.use_cassette("mambu/response/mambu_error") do
+          expect(subject.error.message).to eq 'Internal server error'
+        end
+      end
+    end
+  end
 end

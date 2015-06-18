@@ -31,7 +31,11 @@ module Mambu
     private
 
     def parse_body(json_body)
-      convert_hash_keys(JSON.parse(json_body))
+      begin
+        convert_hash_keys(JSON.parse(json_body))
+      rescue JSON::ParserError
+        { return_code: -1, return_status: 'INTERNAL_SERVER_ERROR' }
+      end
     end
 
     def convert_hash_keys(value)
