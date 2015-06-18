@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://user:password@tenant.sandbox.mambu.com/api/loanproducts/product_id/schedule?anticipatedDisbursement=2015-06-15&firstRepaymentDate=2015-06-15&interestRate=15&loanAmount=10000&principalRepaymentInterval=1&repaymentInstallments=12&repaymentPeriodCount=1&repaymentPeriodUnit=MONTHS
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Cache-Control:
+      - no-cache="set-cookie"
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Thu, 18 Jun 2015 12:56:14 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - AWSELB=AFC3ED5314CDA5B5F21A734BA2D87E7FA6204FE51B7464502B0BBF8B5E5366BE3F9842D6BB65D329B8D9DCEA4A80CA5E30B6E05EFAA593C47E8544DF816DD86F875D461E99;PATH=/
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '1006'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n<html>\r\n\r\n
+        \   <head>\r\n        <meta http-equiv=\"content-type\" content=\"text/html;
+        charset=utf-8\" />\r\n        <title>Mambu.com || Error</title>\r\n        <link
+        rel=\"stylesheet\" href=\"/css/reset.css\" />\r\n        <link rel=\"stylesheet\"
+        href=\"/css/text.css\" />\r\n        <link rel=\"stylesheet\" href=\"/css/960.css\"
+        />\r\n        <link rel=\"stylesheet\" href=\"/css/main.css\" />\r\n        \r\n
+        \       <link rel=\"shortcut icon\" href=\"/img/favicon.gif\" type=\"image/gif\"
+        />\r\n    \t<link rel=\"icon\" href=\"/img/favicon.gif\" type=\"image/gif\"
+        />\r\n\r\n        <meta name=\"description\" content=\"Mambu is an online
+        software platform that lets microcredit organizations outsource their technical
+        challenges and focus on their core business.\" />\r\n        <meta name=\"keywords\"
+        content=\"microfinance, software, microcredit, software as a service, loan
+        management, credit managment, online credit management, portfolio management
+        software\" />\r\n    \r\n        <meta name=\"robots\" content=\"all\" />\r\n
+        \   \t<meta name=\"robots\" content=\"index, follow\" />\r\n        <meta
+        name=\"revisit-after\" content=\"7 days\" />\r\n        <meta name=\"version\"
+        content=\"1.0\" />\r\n        <meta name=\"author\" content=\"Frederik Pfisterer\"
+        />\r\n        <meta name=\"copyright\" content=\"Mambu.com\" />\r\n        \r\n
+        \       <style id=\"antiClickjack\">body{display:none !important;}</style>\r\n\t\t<script
+        type=\"text/javascript\">\r\n\t\t   if (self === top) {\r\n\t\t       var
+        antiClickjack = document.getElementById(\"antiClickjack\");\r\n\t\t       antiClickjack.parentNode.removeChild(antiClickjack);\r\n\t\t
+        \  } else {\r\n\t\t       top.location = self.location;\r\n\t\t   }\r\n\t\t</script>\r\n\r\n
+        \    </head>\r\n\r\n<body>\r\n\r\n<div class=\"container_12\">\r\n\r\n    <div
+        class=\"grid_4 prefix_4 suffix_4\">\r\n    <img src=\"/img/logo_small.png\">\r\n
+        \   <h1 class=\"shy\">Error</h1>\r\n    \r\n    <p>\r\n    \tSorry, there
+        was an error processing your request. <br /><br />\r\n        Most likely
+        our team is aware of the problem and working on it, however if this error
+        persists, please send us an email to <a href=\"mailto:support@mambu.com\">support@mambu.com</a>
+        noting what you were trying to do when the error occured.<br />\r\n    </p>\r\n
+        \   \r\n    </div>\r\n\r\n</div>\r\n\r\n</body>\r\n</html>"
+    http_version:
+  recorded_at: Thu, 18 Jun 2015 12:56:15 GMT
+recorded_with: VCR 2.9.3

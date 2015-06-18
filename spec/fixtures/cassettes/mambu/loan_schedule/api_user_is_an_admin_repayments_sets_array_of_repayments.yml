@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://user:password@tenant.sandbox.mambu.com/api/loanproducts/product_id/schedule?anticipatedDisbursement=2015-06-15&firstRepaymentDate=2015-06-15&interestRate=15&loanAmount=10000&principalRepaymentInterval=1&repaymentInstallments=12&repaymentPeriodCount=1&repaymentPeriodUnit=MONTHS
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Thu, 18 Jun 2015 15:40:23 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - AWSELB=AFC3ED5314CDA5B5F21A734BA2D87E7FA6204FE51B467916083E029F69893000357BABD8D84960105E8A07000F576E9236CA2A7F467F1DB371D9D933D508BB4372718B76FF;PATH=/
+      - JSESSIONID=8C4811D78FB8073D1C10ACF4C40B5B4E; Path=/; Secure
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"repayments":[{"dueDate":"2015-06-15T00:00:00+0000","principalDue":"833.33","principalPaid":"0","interestDue":"125","interestPaid":"0","feesDue":"0","feesPaid":"0","penaltyDue":"0","penaltyPaid":"0","state":"LATE","taxInterestDue":"0","taxInterestPaid":"0","taxFeesDue":"0","taxFeesPaid":"0","taxPenaltyDue":"0","taxPenaltyPaid":"0"},{"dueDate":"2015-07-15T00:00:00+0000","principalDue":"833.33","principalPaid":"0","interestDue":"125","interestPaid":"0","feesDue":"0","feesPaid":"0","penaltyDue":"0","penaltyPaid":"0","state":"PENDING","taxInterestDue":"0","taxInterestPaid":"0","taxFeesDue":"0","taxFeesPaid":"0","taxPenaltyDue":"0","taxPenaltyPaid":"0"},{"dueDate":"2015-08-15T00:00:00+0000","principalDue":"833.33","principalPaid":"0","interestDue":"125","interestPaid":"0","feesDue":"0","feesPaid":"0","penaltyDue":"0","penaltyPaid":"0","state":"PENDING","taxInterestDue":"0","taxInterestPaid":"0","taxFeesDue":"0","taxFeesPaid":"0","taxPenaltyDue":"0","taxPenaltyPaid":"0"},{"dueDate":"2015-09-15T00:00:00+0000","principalDue":"833.33","principalPaid":"0","interestDue":"125","interestPaid":"0","feesDue":"0","feesPaid":"0","penaltyDue":"0","penaltyPaid":"0","state":"PENDING","taxInterestDue":"0","taxInterestPaid":"0","taxFeesDue":"0","taxFeesPaid":"0","taxPenaltyDue":"0","taxPenaltyPaid":"0"},{"dueDate":"2015-10-15T00:00:00+0000","principalDue":"833.33","principalPaid":"0","interestDue":"125","interestPaid":"0","feesDue":"0","feesPaid":"0","penaltyDue":"0","penaltyPaid":"0","state":"PENDING","taxInterestDue":"0","taxInterestPaid":"0","taxFeesDue":"0","taxFeesPaid":"0","taxPenaltyDue":"0","taxPenaltyPaid":"0"},{"dueDate":"2015-11-15T00:00:00+0000","principalDue":"833.33","principalPaid":"0","interestDue":"125","interestPaid":"0","feesDue":"0","feesPaid":"0","penaltyDue":"0","penaltyPaid":"0","state":"PENDING","taxInterestDue":"0","taxInterestPaid":"0","taxFeesDue":"0","taxFeesPaid":"0","taxPenaltyDue":"0","taxPenaltyPaid":"0"},{"dueDate":"2015-12-15T00:00:00+0000","principalDue":"833.33","principalPaid":"0","interestDue":"125","interestPaid":"0","feesDue":"0","feesPaid":"0","penaltyDue":"0","penaltyPaid":"0","state":"PENDING","taxInterestDue":"0","taxInterestPaid":"0","taxFeesDue":"0","taxFeesPaid":"0","taxPenaltyDue":"0","taxPenaltyPaid":"0"},{"dueDate":"2016-01-15T00:00:00+0000","principalDue":"833.33","principalPaid":"0","interestDue":"125","interestPaid":"0","feesDue":"0","feesPaid":"0","penaltyDue":"0","penaltyPaid":"0","state":"PENDING","taxInterestDue":"0","taxInterestPaid":"0","taxFeesDue":"0","taxFeesPaid":"0","taxPenaltyDue":"0","taxPenaltyPaid":"0"},{"dueDate":"2016-02-15T00:00:00+0000","principalDue":"833.33","principalPaid":"0","interestDue":"125","interestPaid":"0","feesDue":"0","feesPaid":"0","penaltyDue":"0","penaltyPaid":"0","state":"PENDING","taxInterestDue":"0","taxInterestPaid":"0","taxFeesDue":"0","taxFeesPaid":"0","taxPenaltyDue":"0","taxPenaltyPaid":"0"},{"dueDate":"2016-03-15T00:00:00+0000","principalDue":"833.33","principalPaid":"0","interestDue":"125","interestPaid":"0","feesDue":"0","feesPaid":"0","penaltyDue":"0","penaltyPaid":"0","state":"PENDING","taxInterestDue":"0","taxInterestPaid":"0","taxFeesDue":"0","taxFeesPaid":"0","taxPenaltyDue":"0","taxPenaltyPaid":"0"},{"dueDate":"2016-04-15T00:00:00+0000","principalDue":"833.33","principalPaid":"0","interestDue":"125","interestPaid":"0","feesDue":"0","feesPaid":"0","penaltyDue":"0","penaltyPaid":"0","state":"PENDING","taxInterestDue":"0","taxInterestPaid":"0","taxFeesDue":"0","taxFeesPaid":"0","taxPenaltyDue":"0","taxPenaltyPaid":"0"},{"dueDate":"2016-05-15T00:00:00+0000","principalDue":"833.37","principalPaid":"0","interestDue":"125","interestPaid":"0","feesDue":"0","feesPaid":"0","penaltyDue":"0","penaltyPaid":"0","state":"PENDING","taxInterestDue":"0","taxInterestPaid":"0","taxFeesDue":"0","taxFeesPaid":"0","taxPenaltyDue":"0","taxPenaltyPaid":"0"}]}'
+    http_version:
+  recorded_at: Thu, 18 Jun 2015 15:40:23 GMT
+recorded_with: VCR 2.9.3
