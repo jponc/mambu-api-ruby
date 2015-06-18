@@ -10,6 +10,12 @@ describe Mambu::ApiModel do
     end
   end
 
+  describe "#api_uri" do
+    it "returns api uri based on class name" do
+      expect(described_class.api_uri).to eq 'apimodels'
+    end
+  end
+
   describe "#find_all" do
     context "endpoint exists" do
       before { allow(described_class).to receive(:api_uri).and_return('loanproducts') }
