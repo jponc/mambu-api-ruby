@@ -8,6 +8,7 @@ require "mambu/connection"
 require "mambu/api_model"
 require "mambu/loan_product"
 require "mambu/loan_fee"
+require "mambu/repayment"
 require "pry"
 
 module Mambu
