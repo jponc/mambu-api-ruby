@@ -33,6 +33,14 @@ describe Mambu::Response do
       end
     end
 
+    describe "#error?" do
+      it "is success" do
+        VCR.use_cassette("mambu/response/success") do
+          expect(subject.error?).to eq false
+        end
+      end
+    end
+
     describe "#error" do
       it "returns nil" do
         VCR.use_cassette("mambu/response/success") do
@@ -108,6 +116,14 @@ describe Mambu::Response do
       end
     end
 
+    describe "#error?" do
+      it "is not success" do
+        VCR.use_cassette("mambu/response/mambu_failure") do
+          expect(subject.error?).to eq true
+        end
+      end
+    end
+
     describe "#error" do
       it "returns mambu error" do
         VCR.use_cassette("mambu/response/mambu_failure") do
@@ -170,6 +186,14 @@ describe Mambu::Response do
       it "is not success" do
         VCR.use_cassette("mambu/response/mambu_error") do
           expect(subject.success?).to eq false
+        end
+      end
+    end
+
+    describe "#error?" do
+      it "is not success" do
+        VCR.use_cassette("mambu/response/mambu_error") do
+          expect(subject.error?).to eq true
         end
       end
     end
