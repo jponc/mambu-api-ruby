@@ -1,5 +1,6 @@
 module Mambu
   class LoanProduct < ApiModel
+    extend Mambu::Finders
     attr_accessor :loan_fees
 
     def loan_fees=(data)

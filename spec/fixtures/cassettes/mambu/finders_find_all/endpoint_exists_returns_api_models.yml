@@ -23,23 +23,23 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Mon, 15 Jun 2015 10:18:42 GMT
+      - Fri, 19 Jun 2015 13:32:04 GMT
       Server:
       - Apache
       Set-Cookie:
-      - AWSELB=AFC3ED5314CDA5B5F21A734BA2D87E7FA6204FE51BBA25A40A2943420522F15342CC91589F4960105E8A07000F576E9236CA2A7F467F1DB371D9D933D508BB4372718B76FF;PATH=/
+      - AWSELB=AFC3ED5314CDA5B5F21A734BA2D87E7FA6204FE51B15A2115800A9DB0BD16AC634A7F2A95065D329B8D9DCEA4A80CA5E30B6E05EFAA593C47E8544DF816DD86F875D461E99;PATH=/
       Vary:
       - Accept-Encoding
       Content-Length:
-      - '1246'
+      - '1243'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '[{"encodedKey":"8a2bf66b4dbfe3c7014ddca2bdd653e7","id":"simple_credit","creationDate":"2015-06-10T08:42:43+0000","lastModifiedDate":"2015-06-15T10:09:39+0000","productName":"Simple
+      string: '[{"encodedKey":"8a2bf66b4dbfe3c7014ddca2bdd653e7","id":"product_id","creationDate":"2015-06-10T08:42:43+0000","lastModifiedDate":"2015-06-17T11:20:23+0000","productName":"Simple
         Credit","productDescription":"Simple Credit","loanType":"INDVIDUAL","defaultLoanAmount":"10000","minLoanAmount":"5000","maxLoanAmount":"20000","maxNumberOfDisbursementTranches":1,"idGeneratorType":"RANDOM_PATTERN","idPattern":"@@@@###","accountInitialState":"PENDING_APPROVAL","activated":true,"repaymentScheduleMethod":"FIXED","scheduleDueDatesMethod":"INTERVAL","defaultRepaymentPeriodCount":1,"repaymentPeriodUnit":"MONTHS","defaultNumInstallments":12,"minNumInstallments":6,"maxNumInstallments":24,"gracePeriodType":"NONE","defaultPrincipalRepaymentInterval":1,"roundingRepaymentScheduleMethod":"ROUND_REMAINDER_INTO_LAST_REPAYMENT","repaymentCurrencyRounding":"NO_ROUNDING","repaymentElementsRoundingMethod":"NO_ROUNDING","paymentMethod":"HORIZONTAL","amortizationMethod":"STANDARD_PAYMENTS","latePaymentsRecalculationMethod":"INCREASE_OVERDUE_INSTALLMENTS","prepaymentAcceptance":"NO_PREPAYMENTS","futurePaymentsAcceptance":"NO_FUTURE_PAYMENTS","repaymentAllocationOrder":["FEE","PENALTY","INTEREST","PRINCIPAL"],"interestRateSettings":{"encodedKey":"8a2bf66b4dbfe3c7014ddca2bdd753e8","interestRateSource":"FIXED_INTEREST_RATE","defaultInterestRate":"15","minInterestRate":"10","maxInterestRate":"20"},"interestChargeFrequency":"ANNUALIZED","interestCalculationMethod":"FLAT","interestApplicationMethod":"ON_DISBURSEMENT","daysInYear":"E30_360","scheduleInterestDaysCountMethod":"USING_REPAYMENT_PERIODICITY","loanPenaltyCalculationMethod":"NONE","loanPenaltyGracePeriod":0,"arrearsDateCalculationMethod":"DATE_ACCOUNT_FIRST_WENT_TO_ARREARS","arrearsTolerancePeriod":0,"loanFees":[{"encodedKey":"8a675a104df3d23d014df6b2234700c8","name":"cash
-        fee","amount":"100","amountCalculationMethod":"FLAT","trigger":"MANUAL","feeApplication":"REQUIRED","active":true,"creationDate":"2015-06-15T10:08:12+0000","amortizationProfile":"NONE","feeProductRules":[]},{"encodedKey":"8a675a104df3d23d014df6b2234a00c9","name":"percent
-        fee","percentageAmount":"10","amountCalculationMethod":"LOAN_AMOUNT_PERCENTAGE","trigger":"DISBURSEMENT","feeApplication":"OPTIONAL","active":true,"creationDate":"2015-06-15T10:08:38+0000","amortizationProfile":"NONE","feeProductRules":[]}],"allowArbitraryFees":false,"accountingMethod":"NONE","loanProductRules":[],"accountLinkingEnabled":false,"autoLinkAccounts":false,"autoCreateLinkedAccounts":false,"settlementOptions":"FULL_DUE_AMOUNTS","repaymentScheduleEditOptions":[],"taxesOnInterestEnabled":false,"taxesOnFeesEnabled":false,"taxesOnPenaltyEnabled":false,"allowGuarantors":false,"allowCollateral":false,"arrearsNonWorkingDaysMethod":"EXCLUDED","automaticallyCloseDormantAccounts":false,"dormancyPeriodDays":0,"lineOfCreditRequirement":"NOT_REQUIRED","minInterestRate":"10","maxInterestRate":"20","defaultInterestRate":"15","interestRateSource":"FIXED_INTEREST_RATE"}]'
+        fee","amount":"100","amountCalculationMethod":"FLAT","trigger":"MANUAL","feeApplication":"REQUIRED","active":true,"creationDate":"2015-06-17T11:19:16+0000","amortizationProfile":"NONE","feeProductRules":[]},{"encodedKey":"8a675a104df3d23d014df6b2234a00c9","name":"percent
+        fee","percentageAmount":"10","amountCalculationMethod":"LOAN_AMOUNT_PERCENTAGE","trigger":"DISBURSEMENT","feeApplication":"OPTIONAL","active":true,"creationDate":"2015-06-17T11:19:16+0000","amortizationProfile":"NONE","feeProductRules":[]}],"allowArbitraryFees":false,"accountingMethod":"NONE","loanProductRules":[],"accountLinkingEnabled":false,"autoLinkAccounts":false,"autoCreateLinkedAccounts":false,"settlementOptions":"FULL_DUE_AMOUNTS","repaymentScheduleEditOptions":[],"taxesOnInterestEnabled":false,"taxesOnFeesEnabled":false,"taxesOnPenaltyEnabled":false,"allowGuarantors":false,"allowCollateral":false,"arrearsNonWorkingDaysMethod":"EXCLUDED","automaticallyCloseDormantAccounts":false,"dormancyPeriodDays":0,"lineOfCreditRequirement":"NOT_REQUIRED","minInterestRate":"10","maxInterestRate":"20","defaultInterestRate":"15","interestRateSource":"FIXED_INTEREST_RATE"}]'
     http_version:
-  recorded_at: Mon, 15 Jun 2015 10:18:42 GMT
+  recorded_at: Fri, 19 Jun 2015 13:32:05 GMT
 recorded_with: VCR 2.9.3
