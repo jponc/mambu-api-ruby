@@ -11,7 +11,11 @@ require "mambu/loan_product"
 require "mambu/loan_fee"
 require "mambu/loan_schedule"
 require "mambu/repayment"
-require "pry"
+begin
+  require "pry"
+rescue LoadError
+end
+
 
 module Mambu
   # Your code goes here...
