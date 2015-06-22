@@ -1,12 +1,14 @@
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
+
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'mambu'
 require 'vcr'
-require 'codeclimate-test-reporter'
-CodeClimate::TestReporter.start
 
 VCR.configure do |c|
   c.cassette_library_dir = "spec/fixtures/cassettes"
   c.hook_into :webmock
+  c.ignore_hosts 'codeclimate.com'
 end
 
 RSpec.configure do |c|
