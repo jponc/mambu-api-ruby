@@ -1,6 +1,8 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'mambu'
 require 'vcr'
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
 
 VCR.configure do |c|
   c.cassette_library_dir = "spec/fixtures/cassettes"
