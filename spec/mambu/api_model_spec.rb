@@ -15,4 +15,32 @@ describe Mambu::ApiModel do
       expect(described_class.api_uri).to eq 'apimodels'
     end
   end
+
+  describe "#convert_decimal" do
+    let(:instance) { described_class.new({}) }
+
+    context "value is not a string" do
+      it "returns value" do
+        expect(instance.convert_decimal(['array'])).to eq ['array']
+      end
+    end
+
+    context "value is non-string number" do
+      it "returns value" do
+        expect(instance.convert_decimal(1)).to eq 1
+      end
+    end
+
+    context "value non-numerical string" do
+      it "returns value" do
+        expect(instance.convert_decimal('nan')).to eq 'nan'
+      end
+    end
+
+    context "value numerical string" do
+      it "returns decimal value" do
+        expect(instance.convert_decimal('13.23')).to eq BigDecimal.new('13.23')
+      end
+    end
+  end
 end
