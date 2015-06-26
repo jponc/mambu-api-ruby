@@ -23,6 +23,7 @@ Or install it yourself as:
 ## Usage
     # create api connection
     connection = Mambu::Connection.new('username', 'password', 'tenant.sandbox')
+
 ### API models finders
 ##### #find_all
     Mambu::LoanProduct.find_all(connection)
@@ -33,8 +34,22 @@ Or install it yourself as:
     # or
     connection.loan_product.find('product_id')
 
+### Loan schedule
+    options = {
+      loan_amount: '10000',
+      first_repayment_date: '2015-06-15',
+      anticipated_disbursement: '2015-06-15',
+      interest_rate: '15',
+      repayment_installments: '12',
+      repayment_period_unit: 'MONTHS',
+      repayment_period_count: '1',
+      principal_repayment_interval: '1'
+    }
+    Mambu::Schedule.find(loan_product, options, connection)
+
 #### Implemented models:
 Mambu::LoanProduct https://developer.mambu.com/customer/portal/articles/1616164-loan-products-api
+Mambu::LoanSchedule https://developer.mambu.com/customer/portal/articles/1616164-loan-products-api
 
 
 ## Development
