@@ -23,7 +23,7 @@ Or install it yourself as:
 ## Usage
     # create api connection
     connection = Mambu::Connection.new('username', 'password', 'tenant.sandbox')
-### API models
+### API models finders
 ##### #find_all
     Mambu::LoanProduct.find_all(connection)
     # or
