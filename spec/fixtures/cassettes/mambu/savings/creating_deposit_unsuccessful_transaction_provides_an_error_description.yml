@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://user:password@tenant.sandbox.mambu.com/api/savings/ABCD123/transactions
+    body:
+      encoding: UTF-8
+      string: amount=222&method=name&type=DEPOSIT
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Cache-Control:
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Tue, 07 Jul 2015 13:20:55 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - AWSELB=AFC3ED5314CDA5B5F21A734BA2D87E7FA6204FE51B15A2115800A9DB0BD16AC634A7F2A95065D329B8D9DCEA4A80CA5E30B6E05EFAA593C47E8544DF816DD86F875D461E99;PATH=/
+      - JSESSIONID=142673D90ABA808CCA7F6FA07CC579ED; Path=/; Secure
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"returnCode":104,"returnStatus":"INVALID_TRANSACTION_TYPE_ID"}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 13:20:55 GMT
+recorded_with: VCR 2.9.3

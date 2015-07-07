@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://user:password@tenant.sandbox.mambu.com/api/savings/ABCD123/transactions
+    body:
+      encoding: UTF-8
+      string: amount=222&type=DEPOSIT
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Tue, 07 Jul 2015 14:01:24 GMT
+      Location:
+      - https://tenant.sandbox.mambu.com/api/savings/ABCD123/transactions/1
+      Server:
+      - Apache
+      Set-Cookie:
+      - AWSELB=AFC3ED5314CDA5B5F21A734BA2D87E7FA6204FE51B7464502B0BBF8B5E5366BE3F9842D6BB65D329B8D9DCEA4A80CA5E30B6E05EFAA593C47E8544DF816DD86F875D461E99;PATH=/
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '414'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"encodedKey":"8a675a104e501b3c014e68d238f12c65","transactionId":26,"parentAccountKey":"8a675a104e501b3c014e6343bc0f1ba9","type":"DEPOSIT","creationDate":"2015-07-07T14:01:24+0000","entryDate":"2015-07-07T16:01:24+0000","amount":"222","interestAmount":"0","feesAmount":"0","overdraftAmount":"0","overdraftPaid":"0","fundsAmount":"222","feesPaid":"0","interestPaid":"0","balance":"1110","details":{"encodedKey":"8a675a104e501b3c014e68d238f12c66","transactionChannel":{"encodedKey":"8a2bf66b4dbfe3c7014dd7e1817d4898","channelFields":[],"id":"cash","name":"Cash","creationDate":"2015-06-09T12:33:10+0000","index":1,"activated":true},"internalTransfer":false},"userKey":"8a65d2c24e2c0185014e43c1e2de35be","savingsPredefinedFeeAmounts":[],"productTypeKey":"8a65d2c24e07fbd2014e0b6f55553a92"}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 14:01:24 GMT
+recorded_with: VCR 2.9.3
