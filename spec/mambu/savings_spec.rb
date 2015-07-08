@@ -24,7 +24,7 @@ describe Mambu::Savings do
 
     context 'invalid transaction' do
       let(:invalid_data) { data.merge(method: 'name') }
-      let(:invalid_data_2) { data.merge('AccountName': 'Test Name') }
+      let(:invalid_data_2) { data.merge(accountName: 'Test Name') }
       let(:invalid_transaction) do
         described_class.create_deposit(account_id, connection, invalid_data)
       end
