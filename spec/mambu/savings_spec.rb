@@ -2,23 +2,15 @@ require 'spec_helper'
 
 describe Mambu::Savings do
   let(:connection) { Mambu::Connection.new('user', 'password', 'tenant.sandbox') }
+  let(:data) { { type: 'DEPOSIT', amount: 222 } }
   let(:account_id) { 'ABCD123' }
 
   context 'creating deposit' do
-    let(:data) { { type: 'DEPOSIT', amount: 222 } }
-    let(:invalid_data) { data.merge(method: 'name') }
-    let(:invalid_data_2) { data.merge('AccountName': 'Test Name') }
     let(:valid_transaction) do
       described_class.create_deposit(account_id, connection, data)
     end
-    let(:invalid_transaction) do
-      described_class.create_deposit(account_id, connection, invalid_data)
-    end
-    let(:invalid_transaction_2) do
-      described_class.create_deposit(account_id, connection, invalid_data_2)
-    end
 
-    context 'successful transaction' do
+    context 'valid transaction' do
       it 'returns a Mambu Savings object', :vcr do
         expect(valid_transaction).to be_kind_of described_class
       end
@@ -30,7 +22,16 @@ describe Mambu::Savings do
       end
     end
 
-    context 'unsuccessful transaction' do
+    context 'invalid transaction' do
+      let(:invalid_data) { data.merge(method: 'name') }
+      let(:invalid_data_2) { data.merge('AccountName': 'Test Name') }
+      let(:invalid_transaction) do
+        described_class.create_deposit(account_id, connection, invalid_data)
+      end
+      let(:invalid_transaction_2) do
+        described_class.create_deposit(account_id, connection, invalid_data_2)
+      end
+
       it 'returns an error', :vcr do
         expect { invalid_transaction }.to raise_error Mambu::Error
       end
