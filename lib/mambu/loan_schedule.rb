@@ -19,5 +19,9 @@ module Mambu
     def self.api_uri
       Mambu::LoanProduct.api_uri
     end
+
+    def total(property)
+      @repayments.map(&property).inject(0, &:+)
+    end
   end
 end

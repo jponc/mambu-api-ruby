@@ -17,6 +17,12 @@ describe Mambu::LoanSchedule do
   end
   subject { described_class.find(loan_product, options, connection) }
 
+  describe "#total" do
+    it "calculates total amount of repayments property", :vcr do
+      expect(subject.total(:principal_due)).to eq BigDecimal.new(10_000)
+    end
+  end
+
   context "api user is an admin" do
     context "valid options" do
       it "returns schedule", :vcr do
