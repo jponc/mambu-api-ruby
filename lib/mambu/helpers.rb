@@ -5,7 +5,7 @@ module Mambu
       error = response.error
       if error.status == 'INTERNAL_SERVER_ERROR'
         error = Mambu::Error.new(
-          'Known mambu issue. Please grant administrator permissions to api user.'
+          'Mambu API returned error without message.'
         )
       end
       fail error

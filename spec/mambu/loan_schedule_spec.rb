@@ -60,7 +60,7 @@ describe Mambu::LoanSchedule do
     it "returns known issue mambu error", :vcr do
       expect { subject }.to raise_error(
         Mambu::Error,
-        'Known mambu issue. Please grant administrator permissions to api user.'
+        'Mambu API returned error without message.'
       )
     end
   end
