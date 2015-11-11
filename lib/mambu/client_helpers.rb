@@ -5,8 +5,9 @@ module Mambu
     end
 
     def create_client(client_attrs, custom_infos = [])
-      custom_infos.map! do |key, val|
-        {customFieldId: key, value: val}
+      custom_infos.map! do |custom_attribute|
+        k, v = custom_attribute.first
+        {customFieldID: k.to_s, value: v}
       end
       data = { client: client_attrs, customInformation: custom_infos }
       Mambu::Client.create_client(self, data)
