@@ -1,17 +1,13 @@
 module Mambu
   module ClientHelpers
-
     def clients
       Mambu::Client.find_all(self)
     end
 
-    def client
-      Mambu::Client
-    end
-
-    # custom_infos should be array of hashes
-    # each hash must have the following keys: `customFieldID` and `value`
     def create_client(client_attrs, custom_infos = [])
+      custom_infos.map! do |key, val|
+        {customFieldId: key, value: val}
+      end
       data = { client: client_attrs, customInformation: custom_infos }
       Mambu::Client.create_client(self, data)
     end
