@@ -15,6 +15,10 @@ module Mambu
       request(:post, url, options)
     end
 
+    def patch(url, options = {})
+      request(:patch, url, options)
+    end
+
     def request(method, url, options)
       Mambu::Response.new(connection.send(method, url, options))
     end
