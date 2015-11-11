@@ -1,5 +1,7 @@
 module Mambu
   class Connection
+    include Mambu::ClientHelpers
+
     def initialize(username, password, tenant)
       @username = username
       @password = password
@@ -20,11 +22,13 @@ module Mambu
     end
 
     def request(method, url, options)
-      Mambu::Response.new(connection.send(method, url, options))
+      Mambu::Response.new(connection.send(method, url, options.to_json))
     end
 
     def connection
       conn = Faraday.new
+      conn.headers['Content-Type'] = 'application/json'
+      conn.headers['Accept'] = 'application/json'
       conn.basic_auth(@username, @password)
       conn
     end
