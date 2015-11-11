@@ -22,7 +22,8 @@ module Mambu
     end
 
     def request(method, url, options)
-      Mambu::Response.new(connection.send(method, url, options.to_json))
+      options = options.to_json if method == :post
+      Mambu::Response.new(connection.send(method, url, options))
     end
 
     def connection
