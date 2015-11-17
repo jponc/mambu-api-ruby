@@ -1,6 +1,7 @@
 module Mambu
   class Connection
     include Mambu::ClientHelpers
+    include Mambu::LoanHelpers
 
     def initialize(username, password, tenant)
       @username = username
